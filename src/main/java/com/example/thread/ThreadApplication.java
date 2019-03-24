@@ -27,6 +27,20 @@ public class ThreadApplication {
 
 		personA.start();
 		personB.start();
+
+		// 实例化乌龟和兔子
+		Tortoise tortoise = new Tortoise();
+		Rabbit rabbit = new Rabbit();
+		// 回调方法的使用，谁先调用calltoback方法，另一个就不跑了
+		ThreadTest2 letOneStop1 = new ThreadTest2(tortoise);
+		// 让兔子的回调方法里面存在乌龟对象的值，可以把乌龟stop
+		rabbit.callToBack = letOneStop1;
+		ThreadTest2 letOneStop2 = new ThreadTest2(rabbit);
+		// 让乌龟的回调方法里面存在兔子对象的值，可以把兔子stop
+		tortoise.callToBack = letOneStop2;
+		// 开始跑
+		tortoise.start();
+		rabbit.start();
 	}
 
 }
