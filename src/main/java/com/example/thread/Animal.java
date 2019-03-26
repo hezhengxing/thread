@@ -7,6 +7,7 @@ package com.example.thread;
  * @Modified By:
  */
 public abstract class Animal extends Thread {
+
     public int length = 2000;
 
     public abstract void running();

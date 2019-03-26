@@ -16,8 +16,12 @@ public class Tortoise extends Animal{
     @Override
     public void running() {
         // 乌龟速度
-        int dis = 2;
-        length -= dis;
+        int dis = 30;
+        if (length >= 30){
+            length -= dis;
+        }else{
+            length=0;
+        }
         System.out.println("乌龟跑了" + dis + "米，距离终点还有" + length + "米");
         if (length <= 0) {
             length = 0;

@@ -15,7 +15,7 @@ public class Rabbit extends Animal {
 
     @Override
     public void running() {
-        int speed = 5;
+        int speed = 50;
         length -= speed;
         System.out.println("兔子跑了" + speed + "米，距离终点还有" + length + "米");
 
